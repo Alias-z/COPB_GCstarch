@@ -20,4 +20,4 @@ install.packages(c(
 
 
 ## Run the code
-Prepare your own OpenAI API key, and run [README.qmd](README.qmd).
+Run [README.qmd](README.qmd) in Quarto
