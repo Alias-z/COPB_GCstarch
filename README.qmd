@@ -38,7 +38,7 @@ save_dir = './/asserts'  # output directory
 #| fig-width: 6 * 1.618
 #| paged-print: true
 
-file_path <- 'data/Table_S1_induction_speed_multiple_species.xlsx'
+file_path <- 'data/Supplementary dataset_1_induction_speed_multiple_species.xlsx'
 
 species_data <- load_species_table(file_path)
 
