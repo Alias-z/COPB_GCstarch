@@ -1,0 +1,109 @@
+---
+title: "The Versatile Role of Guard Cell Starch in Speedy Stomata:
+Beyond Arabidopsis"
+author: "Hongyuan Zhang"
+format: html
+execute: 
+  cache: true
+editor: visual
+jupyter: python3
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+
+library('tidyverse')  # a collection of R packages designed for data science
+source('code/species_table.R') # load the species table data R sript
+source('code/gc_starch.R') # load the starch data R sript
+save_dir = './/asserts'  # output directory
+```
+
+# The Versatile Role of Guard Cell Starch in Speedy Stomata: Beyond Arabidopsis
+
+## A. The natural variation of induction speed
+
+### Fig1 ab. Ranked induction speed
+
+```{r}
+#| label: Species table
+#| warning: false
+#| fig-height: 6
+#| fig-width: 6 * 1.618
+#| paged-print: true
+
+file_path <- 'data/Table_S1_induction_speed_multiple_species.xlsx'
+
+species_data <- load_species_table(file_path)
+
+(crop_plot <- t90_plot_crop(species_data))
+(category_plot <- t90_plot_category(species_data))
+
+crop_plot |> 
+    ggsave(
+        filename = paste(file.path(save_dir, 'crop_plot.pdf')), 
+        device = 'pdf', 
+        height = 10, 
+        width = 10 * 1.618
+    )
+
+category_plot |> 
+    ggsave(
+        filename = paste(file.path(save_dir, 'category_plot.pdf')), 
+        device = 'pdf', 
+        height = 10, 
+        width = 10 * 1.618
+    )
+```
+
+### Fig.1 c. Drivers of speedy stomata
+
+```{r}
+#| label: Drivers of speedy stomata
+#| warning: false
+#| fig-height: 6
+#| fig-width: 6 * 1.618
+drivers <- compute_feature_importances(species_data)
+
+print(drivers$comparison_plot)
+
+drivers$comparison_plot |> 
+    ggsave(
+        filename = paste(file.path(save_dir, 'feature_importance.pdf')), 
+        device = 'pdf', 
+        height = 10, 
+        width = 10 * 1.618
+    )
+```
+
+## B. Starch dynamics under blue light
+
+```{r}
+#| label: GC starch dynamics stats
+#| warning: false
+#| fig-height: 6
+#| fig-width: 6 * 1.618
+#| paged-print: true
+
+file_path <- 'data/Starch_area_summary.xlsx'
+
+starch_data <- load_starch_data(file_path)
+
+(stats_test <- test_treatment_differences(starch_data))
+
+(starch_plot <- plot_species_differences(starch_data, stats_test))
+
+starch_plot |> 
+    ggsave(
+        filename = paste(file.path(save_dir, 'gc_starch.pdf')), 
+        device = 'pdf', 
+        height = 10, 
+        width = 10 * 1.618
+    )
+```

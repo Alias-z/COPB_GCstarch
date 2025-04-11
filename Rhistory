@@ -1,0 +1,512 @@
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: load data
+#| echo: false
+#| message: false
+root <- 'IRGAs Licor LI-6800//Logs'  # log files root directory
+data <- purrr::map(
+c('Experiments'),
+~batch_licor_logs(file.path(root, .x))
+) %>%
+bind_rows()
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box_category(species_data)
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+#summary(model)
+plot_t90_side_by_side_box(species_data)
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+summary(model)
+crop_plot <- t90_plot_crop(species_data)
+#| label: setup
+#| echo: false
+#| message: false
+options(warnParticalMatchDollar = TRUE)  # warning $ partial matching
+options(warnParticalMatchArgs = TRUE)  # warning func args partial matching
+'%!in%' <- function(x,y)!('%in%'(x,y))
+library('tidyverse')  # a collection of R packages designed for data science
+library('ggthemes')  # includes colorblind safe color palette
+source('code/licor_li6800.R')  # load the Licor data R sript
+source('code/species_table.R') # load the species table data R sript
+save_dir = './/asserts'  # output directory
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+summary(model)
+crop_plot <- t90_plot_crop(species_data)
+category_plot <- t90_plot_category(species_data)
+#| label: Species table
+#| warning: false
+#| fig.height: 6
+#| fig.width: 6 * 1.618
+library(lme4)
+file_path <- 'Induction speed multiple species.xlsx'
+species_data <- load_species_table(file_path)
+#model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway` + `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+grass_data <- species_data %>% dplyr::filter(`Category` == 'Angiosperm (Monocot)')
+non_grass <- species_data %>% dplyr::filter(`Category` != 'Angiosperm (Monocot)')
+model <- lm(`TA90 (min)` ~ `Category` + `Photosynthetic pathway`+  `Climate (3 groups)` + `Low light intensity` + `Hight light intensity` + `gsw_ini (mmol m-2 s-1)` + `gsw_ini / gsw_max` +`Tgs90 (min)`, data = species_data)
+summary(model)
+(crop_plot <- t90_plot_crop(species_data))
+(category_plot <- t90_plot_category(species_data))
+crop_plot |>
+ggsave(
+filename = paste(base::file.path(save_dir, 'crop_plot.png')),
+dpi = 500,
+type = 'cairo',
+height = 10,
+width = 10 * 1.618
+)
+category_plot |>
+ggsave(
+filename = paste(base::file.path(save_dir, 'category_plot.png')),
+dpi = 500,
+type = 'cairo',
+height = 10,
+width = 10 * 1.618
+)
