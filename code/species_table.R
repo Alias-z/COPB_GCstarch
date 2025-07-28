@@ -73,6 +73,11 @@ t90_plot_crop <- function(species_data) {
         names_to = 'Parameter',
         values_to = 'Value'
       ) %>%
+      dplyr::mutate(
+        Parameter = factor(Parameter, 
+                          levels = c('tA90 (min)', 'tgs90 (min)'),
+                          labels = c("italic(t[A90])~'(min)'", "italic(t[gs90])~'(min)'"))
+      ) %>%
       ggplot2::ggplot(
         ggplot2::aes(
           x = `Common name`,
@@ -89,7 +94,7 @@ t90_plot_crop <- function(species_data) {
         alpha = 0.4,
         size = 1.5
       ) +
-      ggthemes::scale_fill_colorblind() +
+      ggthemes::scale_fill_colorblind(labels = function(x) parse(text = x)) +
       ggplot2::labs(x = 'Common name', y = 'Time (min)', fill = 'Parameter') +
       ggplot2::theme_bw() +
       ggplot2::theme(
@@ -143,6 +148,11 @@ t90_plot_category <- function(species_data) {
       names_to = 'Parameter',
       values_to = 'Value'
     ) %>%
+    dplyr::mutate(
+      Parameter = factor(Parameter, 
+                        levels = c('tA90 (min)', 'tgs90 (min)'),
+                        labels = c("italic(t[A90])~'(min)'", "italic(t[gs90])~'(min)'"))
+    ) %>%
     ggplot2::ggplot(
       ggplot2::aes(
         x = Category,
@@ -159,7 +169,7 @@ t90_plot_category <- function(species_data) {
       alpha = 0.4,
       size = 1.5
     ) +
-    ggthemes::scale_fill_colorblind() +
+    ggthemes::scale_fill_colorblind(labels = function(x) parse(text = x)) +
     ggplot2::labs(x = NULL, y = 'Time (min)', fill = 'Parameter') +
     ggplot2::theme_bw() +
     ggplot2::theme(
