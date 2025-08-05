@@ -1,5 +1,5 @@
 # COPB_GCstarch
- Code and summarized data for our paper - *The Versatile Role of Guard Cell Starch in Speedy Stomata: Beyond Arabidopsis*
+ Code and summarized data for our paper - [The Versatile Role of Guard Cell Starch in Speedy Stomata: Beyond Arabidopsis](https://doi.org/10.1016/j.pbi.2025.102762) on Current Opinion in Plant Biology
 
 ## Code env config
 You need to install R 4.3.3 and [Quarto](https://quarto.org)
